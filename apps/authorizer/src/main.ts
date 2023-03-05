@@ -29,8 +29,7 @@ async function bootstrap() {
     const appUrl = await app.getUrl();
 
     Logger.log(`Authorizer Microservice Mode is running`);
-
-    Logger.log(`🚀 Application is running on: http://${appUrl}:${port}/${globalPrefix}`);
+    Logger.log(`🚀 Application is running on: ${appUrl}`);
   } catch (e) {
     process.exit(1);
   }

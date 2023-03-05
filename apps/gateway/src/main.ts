@@ -17,12 +17,12 @@ async function bootstrap() {
   app.setGlobalPrefix(globalPrefix);
   const port = process.env.PORT || 3333;
   const swaggerPath = await setupSwagger(app, globalPrefix);
-  await app.listen(port);
+  await app.listen(port, "0.0.0.0");
 
   const appUrl = await app.getUrl();
 
   Logger.log(`Address: ${appUrl}`);
-  Logger.log(`Docs: ${swaggerPath}`);
+  Logger.log(`Docs: ${appUrl}/${swaggerPath}`);
 }
 
 bootstrap();
